@@ -19,7 +19,7 @@ end
 
 def load_rooms
   # Generate rooms into a list
-  rooms = get_gamedata.each do |room|
+  rooms = get_gamedata.map do |room|
     Room.new(room[:name],
              room[:description],
              room[:description_visited],
@@ -41,24 +41,59 @@ def new_game(pname)
 
 end
 
-def load_game
-  savefile = IO.read("savefile")
-  file = JSON.generate(savefile)
+def hash_reconverter
+end
 
-  pname = file[:playerdata.to_s]['name']
-  pinv = file[:playerdata.to_s]['inventory']
-  ppos = file[:playerdata.to_s]['position']
-  pvis = file[:playerdata.to_s]['visited']
+def load_game
+
+  file = File.open("savefile","r")
+  json = JSON.load(file)
+  file.close
+
+  pname = json['playerdata']['name']
+  pinv = json['playerdata']['inventory']
+  ppos = json['playerdata']['position']
+  pvis = json['playerdata']['visited']
   
   a_player = Player.new(pname, pinv, ppos, pvis)
 
-  rooms = file[:roomdata.to_s].map do |attr|
+  json['gamedata'].map do |sub|
+    index = json['gamedata'].index(sub)
+    sub['items'].reduce({}) do |memo, (k, v)|
+      memo.tap { |m| m[k.to_sym] = v }
+      json['gamedata'][index]['items'] = memo
+    end
+  end
+
+  json['gamedata'].map do |sub|
+    index = json['gamedata'].index(sub)
+    sub['exits'].reduce({}) do |memo, (k, v)|
+      memo.tap { |m| m[k.to_sym] = v }
+      json['gamedata'][index]['exits'] = memo
+    end
+  end
+
+  rooms = json['gamedata'].map do |item|
     Room.new(
-      attr[:name.to_s]
+      item['name'],
+      item['description'],
+      item['description_visited'],
+      item['items'],
+      item['exits'],
     )
   end
 
+
+  current_room = Room.new(json['cur_room']['name'],
+                         json['cur_room']['description'],
+                         json['cur_room']['description_visited'],
+                         json['cur_room']['items'],
+                         json['cur_room']['exits']
+                         )
+
+  a_game = Game.new(rooms, a_player, current_room, json['sel_dir']) 
   binding.pry
+  a_game.play
 end
 
 # Intro screen

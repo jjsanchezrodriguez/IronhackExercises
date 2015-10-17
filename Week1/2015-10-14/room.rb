@@ -1,5 +1,5 @@
 class Room
-  attr_accessor :items
+  attr_accessor :items, :name, :description, :description_visited, :items, :exits
   def initialize(name, description, description_visited, items, exits)
     @name = name
     @description = description
