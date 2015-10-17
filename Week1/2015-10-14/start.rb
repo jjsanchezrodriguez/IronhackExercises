@@ -50,11 +50,16 @@ def load_game
   json = JSON.load(file)
   file.close
 
+  json['playerdata']['inventory'].reduce({}) do |memo, (k, v)|
+    memo.tap { |m| m[k.to_sym] = v }
+    json['playerdata']['inventory'] = memo
+  end
+
   pname = json['playerdata']['name']
   pinv = json['playerdata']['inventory']
   ppos = json['playerdata']['position']
   pvis = json['playerdata']['visited']
-  
+
   a_player = Player.new(pname, pinv, ppos, pvis)
 
   json['gamedata'].map do |sub|
@@ -72,6 +77,17 @@ def load_game
       json['gamedata'][index]['exits'] = memo
     end
   end
+
+
+    json['cur_room']['exits'].reduce({}) do |memo, (k, v)|
+      memo.tap { |m| m[k.to_sym] = v }
+      json['cur_room']['exits'] = memo
+    end
+
+    json['cur_room']['items'].reduce({}) do |memo, (k, v)|
+      memo.tap { |m| m[k.to_sym] = v }
+      json['cur_room']['items'] = memo
+    end
 
   rooms = json['gamedata'].map do |item|
     Room.new(
@@ -91,8 +107,8 @@ def load_game
                          json['cur_room']['exits']
                          )
 
-  a_game = Game.new(rooms, a_player, current_room, json['sel_dir']) 
-  binding.pry
+  a_game = Game.new(rooms, a_player, current_room, json['sel_dir'])
+
   a_game.play
 end
 
@@ -108,4 +124,3 @@ when 2
 when 3
   puts "quitting"
 end
-

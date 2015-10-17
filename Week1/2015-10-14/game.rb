@@ -9,12 +9,12 @@ class Game
 
   def initialize(rooms, player, cur_room = nil, sel_dir = nil)
     # rooms - array of Room objects
-    @rooms = rooms 
+    @rooms = rooms
     @player = player
     @sel_dir = sel_dir
     @cur_room = cur_room
   end
-    
+
   def hash_converter(ary)
     converted = {}
     ary.each do |k, v|
@@ -46,7 +46,7 @@ class Game
     player[:visited] = @player.visited
 
     data = {}
-    data[:playerdata] = player 
+    data[:playerdata] = player
     data[:gamedata] = convert_room_objs_to_hash
     data[:sel_dir] = @sel_dir
     data[:cur_room] = {}
@@ -61,7 +61,7 @@ class Game
     file.close
   end
 
-  def get_current_room 
+  def get_current_room
     valid_room = @rooms.find do |room|
       room.name == @player.position
     end
@@ -74,7 +74,7 @@ class Game
   end
 
   def enter
-    @cur_room = get_current_room 
+    @cur_room = get_current_room
     divider = "-" * @cur_room.name.size
 
     puts "\n"
@@ -98,7 +98,7 @@ class Game
       end
     end
 
-    puts "Directions: #{direction_printer(@cur_room)}".colorize(:background => :light_blue, 
+    puts "Directions: #{direction_printer(@cur_room)}".colorize(:background => :light_blue,
                                                      :color => :black)
     prompt
   end
