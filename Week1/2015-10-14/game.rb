@@ -77,10 +77,11 @@ class Game
     puts @cur_room.name.colorize(:green)
     puts divider.colorize(:green)
 
-    puts @cur_room.description
 
     if @player.visited.include?(@cur_room.name)
       puts @cur_room.description_visited
+    else
+      puts @cur_room.description
     end
 
     unless @cur_room.items.empty?
@@ -172,6 +173,17 @@ class Game
       else
         puts "No item '#{str}'!".colorize(:red)
       end
+    end
+
+    if input.include?('read') && @player.inventory.include?('letter')
+      @rooms.each do |room|
+        if room.name == 'death'
+          @cur_room = room
+        end
+      end
+      system "clear"
+      puts @cur_room.description.colorize(:red)
+      exit(0)
     end
 
     case @sel_dir
