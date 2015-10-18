@@ -15,14 +15,6 @@ class Game
     @cur_room = cur_room
   end
 
-  def hash_converter(ary)
-    converted = {}
-    ary.each do |k, v|
-      converted[k.to_s] = v
-    end
-    converted
-  end
-
   def convert_room_objs_to_hash
     temp = []
     @rooms.each do |room|
@@ -30,9 +22,8 @@ class Game
       hash['name'] = room.name
       hash['description'] = room.description
       hash['description_visited'] = room.description_visited
-      hash['items'] = hash_converter(room.items)
-      hash['exits'] = hash_converter(room.exits)
-      #hash['exits'] = room.exits.keys.map { |e| e.to_s }
+      hash['items'] = room.items
+      hash['exits'] = room.exits
       temp << hash
     end
     return temp
@@ -40,23 +31,23 @@ class Game
 
   def save
     player = {}
-    player[:name] = @player.name
-    player[:inventory] = @player.inventory
-    player[:position] = @player.position
-    player[:visited] = @player.visited
+    player['name'] = @player.name
+    player['inventory'] = @player.inventory
+    player['position'] = @player.position
+    player['visited'] = @player.visited
 
     data = {}
-    data[:playerdata] = player
-    data[:gamedata] = convert_room_objs_to_hash
-    data[:sel_dir] = @sel_dir
-    data[:cur_room] = {}
-    data[:cur_room][:name] = @cur_room.name
-    data[:cur_room][:description] = @cur_room.description
-    data[:cur_room][:description_visited] = @cur_room.description_visited
-    data[:cur_room][:items] = @cur_room.items
-    data[:cur_room][:exits] = @cur_room.exits
+    data['playerdata'] = player
+    data['gamedata'] = convert_room_objs_to_hash
+    data['sel_dir'] = @sel_dir
+    data['cur_room'] = {}
+    data['cur_room']['name'] = @cur_room.name
+    data['cur_room']['description'] = @cur_room.description
+    data['cur_room']['description_visited'] = @cur_room.description_visited
+    data['cur_room']['items'] = @cur_room.items
+    data['cur_room']['exits'] = @cur_room.exits
 
-    file = File.open("savefile","w")
+    file = File.open("savefile.json","w")
     data_json = JSON.dump(data, file)
     file.close
   end
@@ -69,7 +60,7 @@ class Game
 
   def direction_printer(room)
     exits = room.exits.keys.reduce("") do |str, key|
-      str += key.to_s.upcase + ' '
+      str += key.upcase + ' '
     end
   end
 
@@ -114,11 +105,11 @@ class Game
   end
 
   def possible_to_enter(direction)
-    @cur_room.exits.keys.include?(direction.to_sym)
+    @cur_room.exits.keys.include?(direction)
   end
 
   def move
-    @player.position = @cur_room.exits[@sel_dir.to_sym]
+    @player.position = @cur_room.exits[@sel_dir]
     unless @player.visited.include?(@cur_room.name)
       @player.visited << @cur_room.name
     end
@@ -126,21 +117,21 @@ class Game
 
   def item_exists(obj, str)
     if obj.class == Player
-      @player.inventory.include?(str.to_sym)
+      @player.inventory.include?(str)
     else
-      @cur_room.items.include?(str.to_sym)
+      @cur_room.items.include?(str)
     end
   end
 
   def pick_up(str)
-    add = @cur_room.items.assoc(str.to_sym)
-    @cur_room.items.delete(add[0].to_sym)
+    add = @cur_room.items.assoc(str)
+    @cur_room.items.delete(add[0])
     @player.inventory[add[0]] = add[1]
   end
 
   def drop(str)
-    drop = @player.inventory.assoc(str.to_sym)
-    @player.inventory.delete(drop[0].to_sym)
+    drop = @player.inventory.assoc(str)
+    @player.inventory.delete(drop[0])
     @cur_room.items[drop[0]] = drop[1]
   end
 
@@ -162,6 +153,7 @@ class Game
       inv
     when 'save'
       save
+      puts "Saved!".colorize(:red)
     end
 
     if input.include?('pick up')

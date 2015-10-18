@@ -17,43 +17,30 @@ def intro
   input = gets.chomp.to_i
 end
 
-def load_rooms
-  # Generate rooms into a list
-  rooms = get_gamedata.map do |room|
-    Room.new(room[:name],
-             room[:description],
-             room[:description_visited],
-             room[:items],
-             room[:exits])
+def load_rooms(gamedata)
+  rooms = gamedata.map do |room|
+    Room.new(room['name'],
+             room['description'],
+             room['description_visited'],
+             room['items'],
+             room['exits'])
   end
 end
 
 def new_game(pname)
-
-  rooms = load_rooms
+  rooms = load_rooms(get_gamedata)
   a_player = Player.new(pname)
-
   a_game = Game.new(rooms, a_player)
-
   system "clear"
 
   a_game.play
-
-end
-
-def hash_reconverter
 end
 
 def load_game
 
-  file = File.open("savefile","r")
+  file = File.open("savefile.json","r")
   json = JSON.load(file)
   file.close
-
-  json['playerdata']['inventory'].reduce({}) do |memo, (k, v)|
-    memo.tap { |m| m[k.to_sym] = v }
-    json['playerdata']['inventory'] = memo
-  end
 
   pname = json['playerdata']['name']
   pinv = json['playerdata']['inventory']
@@ -61,50 +48,13 @@ def load_game
   pvis = json['playerdata']['visited']
 
   a_player = Player.new(pname, pinv, ppos, pvis)
-
-  json['gamedata'].map do |sub|
-    index = json['gamedata'].index(sub)
-    sub['items'].reduce({}) do |memo, (k, v)|
-      memo.tap { |m| m[k.to_sym] = v }
-      json['gamedata'][index]['items'] = memo
-    end
-  end
-
-  json['gamedata'].map do |sub|
-    index = json['gamedata'].index(sub)
-    sub['exits'].reduce({}) do |memo, (k, v)|
-      memo.tap { |m| m[k.to_sym] = v }
-      json['gamedata'][index]['exits'] = memo
-    end
-  end
-
-
-    json['cur_room']['exits'].reduce({}) do |memo, (k, v)|
-      memo.tap { |m| m[k.to_sym] = v }
-      json['cur_room']['exits'] = memo
-    end
-
-    json['cur_room']['items'].reduce({}) do |memo, (k, v)|
-      memo.tap { |m| m[k.to_sym] = v }
-      json['cur_room']['items'] = memo
-    end
-
-  rooms = json['gamedata'].map do |item|
-    Room.new(
-      item['name'],
-      item['description'],
-      item['description_visited'],
-      item['items'],
-      item['exits'],
-    )
-  end
-
+  rooms = load_rooms(json['gamedata'])
 
   current_room = Room.new(json['cur_room']['name'],
-                         json['cur_room']['description'],
-                         json['cur_room']['description_visited'],
-                         json['cur_room']['items'],
-                         json['cur_room']['exits']
+                          json['cur_room']['description'],
+                          json['cur_room']['description_visited'],
+                          json['cur_room']['items'],
+                          json['cur_room']['exits'],
                          )
 
   a_game = Game.new(rooms, a_player, current_room, json['sel_dir'])
