@@ -16,9 +16,14 @@ class ShoppingCart
     quantities
     discounts
     calculate
+    total_sum = @sum.reduce(0) do |sum, (k,v)| 
+      sum += v
+    end
     @qtities.each do |name, qty|
       puts "#{qty.to_s.colorize( :background => :white, :color => :black)}  #{name}(s) #{@sum[name].to_s.colorize(:red)}"
     end
+    puts "--------"
+    puts "Total: #{total_sum.to_s.colorize( :background => :green, :color => :red )}"
   end
 
   def calculate
