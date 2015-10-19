@@ -9,3 +9,7 @@ __Week 1__ (Ruby)
 - Wednesday: MUD-like text-adventure game
 - Thursday: CLI subtitle utility & Shopping cart
 - Friday: Chess validator
+
+__Week 2__ (Ruby & Sinatra)
+
+- Monday: Unit testing w/ `rspec`
