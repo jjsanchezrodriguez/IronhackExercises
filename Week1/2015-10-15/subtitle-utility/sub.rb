@@ -21,6 +21,8 @@ class Sub
 
     controller.convert_to_date_obj
     controller.shift
+    controller.check_for_typos
+    controller.censor!
     source_file.write(controller.convert_date_obj_to_s)
   end
 
