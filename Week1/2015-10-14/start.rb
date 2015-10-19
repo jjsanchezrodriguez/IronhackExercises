@@ -17,48 +17,49 @@ def intro
   input = gets.chomp.to_i
 end
 
-def load_rooms
-  # Generate rooms into a list
-  rooms = get_gamedata.each do |room|
-    Room.new(room[:name],
-             room[:description],
-             room[:description_visited],
-             room[:items],
-             room[:exits])
+def load_rooms(gamedata)
+  rooms = gamedata.map do |room|
+    Room.new(room['name'],
+             room['description'],
+             room['description_visited'],
+             room['items'],
+             room['exits'])
   end
 end
 
 def new_game(pname)
-
-  rooms = load_rooms
+  rooms = load_rooms(get_gamedata)
   a_player = Player.new(pname)
-
   a_game = Game.new(rooms, a_player)
-
   system "clear"
 
   a_game.play
-
 end
 
 def load_game
-  savefile = IO.read("savefile")
-  file = JSON.generate(savefile)
 
-  pname = file[:playerdata.to_s]['name']
-  pinv = file[:playerdata.to_s]['inventory']
-  ppos = file[:playerdata.to_s]['position']
-  pvis = file[:playerdata.to_s]['visited']
-  
+  file = File.open("savefile.json","r")
+  json = JSON.load(file)
+  file.close
+
+  pname = json['playerdata']['name']
+  pinv = json['playerdata']['inventory']
+  ppos = json['playerdata']['position']
+  pvis = json['playerdata']['visited']
+
   a_player = Player.new(pname, pinv, ppos, pvis)
+  rooms = load_rooms(json['gamedata'])
 
-  rooms = file[:roomdata.to_s].map do |attr|
-    Room.new(
-      attr[:name.to_s]
-    )
-  end
+  current_room = Room.new(json['cur_room']['name'],
+                          json['cur_room']['description'],
+                          json['cur_room']['description_visited'],
+                          json['cur_room']['items'],
+                          json['cur_room']['exits'],
+                         )
 
-  binding.pry
+  a_game = Game.new(rooms, a_player, current_room, json['sel_dir'])
+
+  a_game.play
 end
 
 # Intro screen
@@ -73,4 +74,3 @@ when 2
 when 3
   puts "quitting"
 end
-
