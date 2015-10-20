@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Online Calculator</title>
+    </head>
+    <body>
+        <p>
+            <h1>Your calculation:</h1>
+            <form action="/result" method="POST">
+                <input type="number" placeholder="first number" name="first">
+                <input type="number" placeholder="second number" name="second">
+
+                <label for="add">Add</label>
+                <input type="radio" value="addition" name="operation" id="add">
+
+                <label for="sub">Subtract</label>
+                <input type="radio" value="subtraction" name="operation" id="sub">
+
+                <label for="mult">Multiply</label>
+                <input type="radio" value="multiplication" name="operation" id="mult">
+
+                <label for="div">Divide</label>
+                <input type="radio" value="division" name="operation" id="div">
+
+                <button type="submit">Calculate</button>
+            </form>
+        </p>
+    </body>
+</html>
