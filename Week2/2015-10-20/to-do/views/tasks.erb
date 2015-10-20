@@ -1,0 +1,12 @@
+<h1>Tasks</h1>
+
+<a href="/new_task">Add task</a>
+
+<% @loaded_tasks.each do |ptask| %>
+<ul>
+    <li>ID: <%= ptask.id%></li>
+    <li>created: <%= ptask.created_at%></li>
+    <li>content: <%= ptask.content%></li>
+    <li>completed?: <%= ptask.complete%></li>
+</ul>
+<% end %>
