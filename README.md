@@ -13,3 +13,4 @@ __Week 1__ (Ruby)
 __Week 2__ (Ruby & Sinatra)
 
 - Monday: Unit testing w/ `rspec`
+- Tuesday: Sinatra (ToDo, Ascii) + Online calculator
