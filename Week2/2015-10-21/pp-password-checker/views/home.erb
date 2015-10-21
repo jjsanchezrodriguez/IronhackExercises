@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Password Checker Enhanced</title>
+    </head>
+    <body>
+        <h1>Log In</h1>
+        <p><%= @warning %>
+
+        <form action="/login" method="post">
+            <input type="email" name="email" placeholder="email@example.com">
+            <input type="password" name="pass">
+            <input type="submit" value="Log In">
+        </form>
+    </body>
+</html>
