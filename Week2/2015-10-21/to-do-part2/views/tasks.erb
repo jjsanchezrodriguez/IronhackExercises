@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Tasks</title>
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <div class="container">
+    <h1>Your Tasks</h1>
+    </div>
+
+    <div class="container">
+
+    <a href="/new_task">Add task</a>
+
+    <% if @loaded_tasks.size > 0 %>
+        <% @loaded_tasks.each do |ptask| %>
+<div class="task-container">
+    <div class="row">
+        <div class="col-sm-4">
+          <ul class="list-group">
+            <li class="list-group-item">ID: <%= ptask.id%></li>
+            <li class="list-group-item">created: <%= ptask.created_at%></li>
+            <li class="list-group-item">content: <%= ptask.content%></li>
+            <li class="list-group-item">completed: <%= ptask.complete%></li>
+          </ul>
+            <form action="/complete" method="post">
+                <button type="submit" value="<%= ptask.id %>" name="complete" class="btn btn-sm btn-primary">Complete</button>
+            </form>
+
+            <form action="/delete" method="post">
+                <button type="submit" value="<%= ptask.id %>" name="id" class="btn btn-sm btn-primary">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+        <% end %>
+    <% else %>
+        <p>No tasks</p>
+    <% end %>
+  </body>
+</html>
+
+

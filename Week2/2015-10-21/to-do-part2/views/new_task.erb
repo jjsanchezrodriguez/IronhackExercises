@@ -1,0 +1,23 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Tasks</title>
+  </head>
+<body>
+    <div class="container">
+    <h1>New task</h1>
+    <form action="/new_task" method="post" class="form-inline">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Task:</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Add task here" name="content">
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    </div>
+</body>
+</html>
