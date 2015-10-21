@@ -14,3 +14,4 @@ __Week 2__ (Ruby & Sinatra)
 
 - Monday: Unit testing w/ `rspec`
 - Tuesday: Sinatra (ToDo, Ascii) + Online calculator
+- Wednesday: Sinatra & Sessions - Primitive user authenticator
