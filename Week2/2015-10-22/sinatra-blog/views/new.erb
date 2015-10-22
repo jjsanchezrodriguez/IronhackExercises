@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>New post | Sinatra Blog</title>
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+      <a class="blog-nav-item active" href="/">Home</a>
+      <a class="blog-nav-item" href="/new">Add post</a>
+    </nav>
+  </div>
+  </div>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+          <h1>Add new post</h1>
+          <form action="/posted" method="post">
+              <h3><label for="blogauthor">Author</label></h3>
+              <input type="text" name="blogauthor">
+
+              <h3><label for="blogtitle">Title</label></h3>
+              <input type="text" name="blogtitle">
+
+              <div class="textinput">
+                <h3><label for="blogpost">Text</label></h3>
+              <textarea rows="3" type="text" name="blogpost"></textarea>
+              </div>
+
+              <div>
+                <h3><label for="blogcategory">Category</label></h3>
+              <select name="blogcategory" class="span4">
+                  <option value="sponsored">Sponsored</option>
+                  <option value="blog">Blog</option>
+              </select>
+            </div>
+
+                      <div style="margin-top:30px">
+                      <button type="submit" class="btn">Post</button>
+                    </div>
+            </div>
+
+
+
+
+          </form>
+
+        </div><!-- /.blog-main -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
