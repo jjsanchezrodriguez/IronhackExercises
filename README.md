@@ -2,7 +2,7 @@
 
 Exercises made during programming bootcamp Ironhack in Barcelona (Oct - Dec 2015).
 
-__Week 1__ (Ruby) 
+__Week 1__ (Ruby)
 
 - Monday: Collections
 - Tuesday: Command-line blog
@@ -15,3 +15,4 @@ __Week 2__ (Ruby & Sinatra)
 - Monday: Unit testing w/ `rspec`
 - Tuesday: Sinatra (ToDo, Ascii) + Online calculator
 - Wednesday: Sinatra & Sessions - Primitive user authenticator, Authentication via models with RSpec testing
+- Thursday: Sinatra Blog & Game of Life
