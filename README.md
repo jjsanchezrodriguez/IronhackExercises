@@ -16,3 +16,4 @@ __Week 2__ (Ruby & Sinatra)
 - Tuesday: Sinatra (ToDo, Ascii) + Online calculator
 - Wednesday: Sinatra & Sessions - Primitive user authenticator, Authentication via models with RSpec testing
 - Thursday: Sinatra Blog & Game of Life
+- Friday: Sinatra with IMDB gem - Movie Lovers quiz
