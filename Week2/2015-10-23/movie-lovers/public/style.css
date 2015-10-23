@@ -1,0 +1,28 @@
+.movie img {
+    width: 200px;
+    overflow: hidden;
+}
+
+.movie {
+    display: inline-block;
+}
+
+.searchbar {
+    background-color: #BFFFC9;
+    height: 45px;
+}
+
+.fluid-container {
+    margin: 0px auto;
+    width: 600px;
+}
+
+.form-inline {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.form-group {
+    width: 450px;
+    font-size: 18px;
+}
