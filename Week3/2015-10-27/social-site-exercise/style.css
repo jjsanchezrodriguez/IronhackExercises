@@ -1,0 +1,224 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+body {
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #4078c0;
+}
+
+.box {
+  background-color: #f5f5f5;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-user {
+  margin-top: 20px;
+  width: 100%;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.box-user-avatar {
+  
+}
+.user-avatar {
+  width: 40px;
+}
+
+.box-user-status {
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+.box-post {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 350px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.box-post-bounty {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 0.08em solid #f5f5f5;
+  font-size: 14px;
+}
+
+.box-post-bounty-icon {
+  padding-right: 10px;
+}
+
+.bounty-icon {
+  width: 30px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.box-post-tags {
+  display: flex;
+  padding: 10px 5px;
+  align-items: center;
+}
+
+.tag {
+  margin: 0px 3px;
+  border: 1px solid #aaa;
+  letter-spacing: 0.03em;
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 500;
+  padding: 2px 8px;
+}
+
+.current-tag {
+  color: #f64f5a;
+  font-weight: 700;
+}
+
+.coins {
+  color: #f3ab4c;
+  font-weight; 700;
+  border: none;
+}
+
+.coin-icon {
+  background-color: #f3ab4c;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 3px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.coin-icon::before {
+  content: "¢";
+  position: relative;
+  bottom: 3px;
+}
+
+.box-post-content {
+  margin: 0px 10px 0px 10px;
+}
+
+.box-post-comments {
+  margin: 10px 10px;
+}
+
+.box-post-comments-likebar {
+  display: flex;
+  align-items: center;
+  font-family: 'entypo', sans-serif;
+  color: #f64f5a;
+}
+
+.box-post-comments-users {
+  font-size: 12px;
+  color: #b5b5b5;
+  margin-left: 3px;
+}
+
+.box-post-comments-view {
+  margin: 3px 0px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-family: 'fontawesome';
+  color: #b5b5b5;
+}
+
+.box-post-comments-view-label {
+  font-size: 12px;
+  margin-left: 3px;
+}
+
+.comments-wrapper {
+  margin: 25px 10px;
+}
+
+.box-post-comments-comment {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-content {
+  margin-left: 10px;
+}
+
+.comment-name {
+  font-size: 14px;
+}
+
+.comment-text {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #b5b5b5;
+}
+
+.comment-image {
+  display: block;
+  margin-top: 5px;
+  max-width: 300px;
+}
+
+.blue-avatar {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+}
+
+.orange-avatar {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  border-radius: 50%;
+}
+
+.box-post-comment-submit {
+  display: flex;
+  margin: 15px 10px 10px 10px;
+}
+
+.box-post-comment-submit-avatar {
+  background-color: darkgrey;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.box-post-comment-submit-button {
+  margin-left: 10px;
+  background-color: transparent;
+  color: #2889d8;
+  padding: 3px 15px;
+  border: 1px solid #2889d8;
+  border-radius: 10px;
+  letter-spacing: 0.2em;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.box-post-comment-submit-button:hover {
+  background-color: #2889d8;
+  color: #fff;
+}
+
