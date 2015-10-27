@@ -20,4 +20,4 @@ __Week 2__ (Ruby & Sinatra)
 
 __Week 3__ (Front-end & JavaScript)
 - Monday: HTML5, CSS, Bootstrap + Github clone
-- Tuesday: CSS Tricks + Social Site exercise
+- Tuesday: CSS Tricks + Social Site exercise & Google Drive Clone exercise

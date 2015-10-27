@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #222222;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0px 0px 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.google-colors {
+    font-size: 26px;
+}
+
+.google-logo {
+    padding-left: 10px;
+}
+
+.search-form {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    margin-left: 80px;
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+}
+
+.search-bar input {
+    width: 70%;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.search-bar button {
+    background-color: #4082f7;
+    border: 0px;
+    padding: 2px 18px;
+    color: white;
+}
+
+.search-bar button i {
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.header-top-nav {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.top-nav-item {
+    margin: 0px 10px;
+}
+
+.top-nav-name {
+    color: #747474;
+    font-size: 12px;
+}
+
+.top-nav-app-grid {
+    font-family: 'Material Icons';
+    color: #747744;
+}
+
+.top-nav-notification {
+    font-family: 'Material Icons';
+    color: #747474;
+}
+
+.top-nav-avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-image: url('./IMG_0817.JPG');
+    background-size: contain;
+}
+
+.drive-logo img {
+    width: 24px;
+    height: 24px;
+}
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 0px 5px 5px -6px #747744;
+}
+
+.header-bottom-info {
+    display: flex;
+    align-items: center;
+}
+
+.drive-path {
+    margin-left: 140px;
+    font-size: 14px;
+    color: #747744;
+}
+
+.header-bottom-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-bottom-nav-identity {
+    border-right: 1px solid #e2e2e2;
+}
+
+.header-bottom-nav-identity i,
+.header-bottom-nav-settings i {
+    margin-right: 15px;
+    color: #747474;
+    font-size: 20px;
+}
+
+.header-bottom-nav-settings {
+    margin-left: 20px;
+}
+
+.sidebar {
+    min-width: 12%;
+    flex-shrink: 0;
+    border-right: 1px solid #e2e2e2;
+    margin: 20px 0px 0px 10px;
+}
+
+.sidebar-button {
+    background-color: #da4931;
+    border: 0;
+    border-radius: 2px;
+    padding: 8px 34px;
+    color: white;    
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.sidebar-icon {
+    margin-right: 5px;
+    padding-top: 3px;
+}
+.sidebar-icon i {
+    font-size: 17px;
+     color: #747474
+}
+
+.sidebar-label {
+    color: #747474;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.active {
+    color: #da4931;
+    font-weight: 500;
+}
+
+.sidebar-usage {
+    border-top: 1px solid #e2e2e2;
+    padding-top: 20px;
+}
+
+.sidebar-usage-storage {
+     color: #747474;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.sidebar-usage-upgrade {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+
+.folder-wrapper {
+    margin: 3px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.folder {
+    display: flex;
+    width: 20%;
+    height: 35px;
+    margin-top: 10px;
+}
+
+.folder-box {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 10px;
+    color: #8f8f8f;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0px 5px 5px -6px #747744;  
+}
+
+
+.folder-box-icon {
+    background-color: #fafafa;
+    padding: 0px 10px 0px 10px;
+    height: 100%;
+}
+
+.folder-box-icon i {
+    margin-top: 3px;
+}
+
+
+.main {
+    display: flex;
+    flex-grow: 1;
+}
+
+.content {
+    width: 100%;
+}
