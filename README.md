@@ -17,3 +17,6 @@ __Week 2__ (Ruby & Sinatra)
 - Wednesday: Sinatra & Sessions - Primitive user authenticator, Authentication via models with RSpec testing
 - Thursday: Sinatra Blog & Game of Life
 - Friday: Sinatra with IMDB gem - Movie Lovers quiz
+
+__Week 3__ (Front-end & JavaScript)
+- Monday: HTML5, CSS, Bootstrap + Github clone
