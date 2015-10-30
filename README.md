@@ -19,6 +19,8 @@ __Week 2__ (Ruby & Sinatra)
 - Friday: Sinatra with IMDB gem - Movie Lovers quiz
 
 __Week 3__ (Front-end & JavaScript)
+
 - Monday: HTML5, CSS, Bootstrap + Github clone
 - Tuesday: CSS Tricks + Social Site exercise & Google Drive Clone exercise
 - Wednesday: JavaScript - Decode Function exercise & Ceaser Cypher exercise
+- Thursday: JavaScript OO - Asynchronous JS, Game of Thrones episode lister exercise + JavaScript shopping cart exercise
