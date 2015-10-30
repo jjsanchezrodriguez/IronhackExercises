@@ -24,3 +24,4 @@ __Week 3__ (Front-end & JavaScript)
 - Tuesday: CSS Tricks + Social Site exercise & Google Drive Clone exercise
 - Wednesday: JavaScript - Decode Function exercise & Ceaser Cypher exercise
 - Thursday: JavaScript OO - Asynchronous JS, Game of Thrones episode lister exercise + JavaScript shopping cart exercise
+- Friday: JavaScript recursion & asynchronicity - Quiz game
