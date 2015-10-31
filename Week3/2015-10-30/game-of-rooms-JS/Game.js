@@ -12,7 +12,7 @@ var Game = function(rooms, start, player) {
     this.player = player;
 
     this.movementValidator = function(input) {
-        if (Object.keys(this.currentRoom.exits).indexOf(input) != -1) {
+        if (input in this.currentRoom.exits) {
             this.selection = this.currentRoom.exits[input];
             return true;
         } else {
@@ -57,6 +57,8 @@ var Game = function(rooms, start, player) {
             this.gamePrompt();
         } else if (input === undefined) {
             ;
+        } else if (input.indexOf("quit") != -1 || input.indexOf("exit") != -1) {
+            return;
         } else if (input.indexOf("pick up") != -1) {
             this.pickUpItem(input);
             this.gamePrompt();
@@ -73,7 +75,6 @@ var Game = function(rooms, start, player) {
             console.log("Can't go there!");
             this.gamePrompt();
         }
-
     };
     
     this.getCurrentRoom = function(selected) {
