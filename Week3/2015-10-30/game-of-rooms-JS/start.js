@@ -4,9 +4,9 @@ var filePath = './savefile.json';
 var Game = require('./Game');
 var gamedata = require('./gamedata');
 
-function newGame(name) {
+function launchNewGame(err, name) {
     var rooms = gamedata;
-    aGame = new Game(rooms, 'Dark room', { 'name': 'Ondrej', 'inv': []});
+    aGame = new Game(rooms, 'Dark room', { 'name': name, 'inv': []});
     aGame.playGame();
 }
 
@@ -14,6 +14,10 @@ function loadGame() {
     var gamedata = JSON.parse(fs.readFileSync(filePath).toString());
     aGame = new Game(gamedata['rooms'], gamedata['selection'], gamedata['player']);
     aGame.playGame();
+}
+
+function newGame() {
+    read({prompt: "Enter your name:"}, launchNewGame)
 }
 
 function pickGame(err, input) {
