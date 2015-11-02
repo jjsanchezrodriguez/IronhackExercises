@@ -25,3 +25,7 @@ __Week 3__ (Front-end & JavaScript)
 - Wednesday: JavaScript - Decode Function exercise & Ceaser Cypher exercise
 - Thursday: JavaScript OO - Asynchronous JS, Game of Thrones episode lister exercise + JavaScript shopping cart exercise
 - Friday: JavaScript recursion & asynchronicity - Quiz game + Game of Rooms JS
+
+__Week 4__ (Ruby on Rails)
+
+- Monday: Intro to RoR: Address Book exercise 

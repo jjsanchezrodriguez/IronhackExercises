@@ -1,0 +1,12 @@
+<h1>Favorites</h1>
+<% @favorites.each do |favorite| %>
+<ul>
+    <li>
+    <p><a href="/favorite/<%= favorite.id %>"><%= favorite.name %></a></p>
+    <p><%= favorite.address %></p>
+    <p><%= favorite.phone %></p>
+    <p><%= favorite.email %></p>
+    </li>
+</ul>
+<% end %>
+<p><a href="/">Go back</a></p>

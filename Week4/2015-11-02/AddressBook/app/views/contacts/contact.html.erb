@@ -1,0 +1,14 @@
+<h1><%= @contact.name %></h1>
+<p><b>Address: </b> <%= @contact.address %></p>
+<p><b>Phone: </b> <%= @contact.phone %></p>
+<p><b>Email: </b> <%= @contact.email %></p>
+<form action="/delete/<%= @contact.id %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Delete">
+</form>
+<form action="/favorite/<%= @contact.id %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Favorite">
+</form>
+<br>
+<a href="/">Go back</a>

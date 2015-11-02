@@ -1,0 +1,12 @@
+<h1>Address book</h1>
+<p><a href="/new">Add contact</a> | <a href="/favorites">Favorites</a></p>
+<% @contacts.each do |contact| %>
+<ul>
+    <li>
+    <p><a href="/contact/<%= contact.id %>"><%= contact.name %></a></p>
+    <p><%= contact.address %></p>
+    <p><%= contact.phone %></p>
+    <p><%= contact.email %></p>
+    </li>
+</ul>
+<% end %>
