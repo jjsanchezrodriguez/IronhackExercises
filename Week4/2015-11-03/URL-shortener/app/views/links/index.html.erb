@@ -1,0 +1,19 @@
+<h1>URL shortener</h1>
+
+<p>
+    <a href="/links/recent_ten">Recent 10</a>
+</p>
+
+<ul>
+<% @links.each do |link| %>
+    <li>
+        <p>
+            <a href= <%= "#{link.original_link}" %>> 
+                <%= link.modified_link %>
+            </a>
+        </p>
+    </li>
+<% end %>
+</ul>
+
+<%= link_to "new", links_new_path %>

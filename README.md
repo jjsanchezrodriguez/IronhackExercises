@@ -29,3 +29,4 @@ __Week 3__ (Front-end & JavaScript)
 __Week 4__ (Ruby on Rails)
 
 - Monday: Intro to RoR: Address Book exercise 
+- Tuesday: Data persistence: URL shortener exercise
