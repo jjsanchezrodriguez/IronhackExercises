@@ -1,4 +1,12 @@
 class Link < ActiveRecord::Base
+  def self.create_link(original)
+    if Link.check_for_existing(original).nil?
+      Link.create(original_link: Link.check_for_http(original), modified_link: Link.generate_url)
+    else
+      Link.check_for_existing(original)
+    end
+  end
+
   def self.generate_url
     str = Link.unique_id (3)
     "http://localhost:3000/#{str}"

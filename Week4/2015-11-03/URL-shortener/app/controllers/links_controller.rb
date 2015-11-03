@@ -8,12 +8,7 @@ class LinksController < ApplicationController
   end
 
   def create
-    original = params[:link][:original_link]
-    if Link.check_for_existing(original).nil?
-      @link = Link.create(original_link: Link.check_for_http(original), modified_link: Link.generate_url)
-    else
-      @link = Link.check_for_existing(original)
-    end
+    @link = Link.create_link(params[:link][:original_link])
     render "shared/shortened"
   end
 
