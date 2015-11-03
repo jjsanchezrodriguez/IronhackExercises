@@ -7,38 +7,26 @@ class ContactsController < ApplicationController
   end
 
   def create
-    Contact.create(
-      :name => params[:contact][:name],
-      :address => params[:contact][:address],
-      :phone => params[:contact][:phone],
-      :email => params[:contact][:email],
-    ).valid?
-
+    Contact.create_contact(params)
     redirect_to "/"
   end
 
   def detail
-    @contact = Contact.find_by(id: params[:contact_id])
-    if @contact.nil?
-      render :contact_error
-    else
-      render :contact
-    end
+    @contact = Contact.get_contact_details(params)
+    render :contact_error if @contact.nil? else render :contact
   end
 
   def delete
-    Contact.find(params[:contact_id]).destroy
+    Contact.delete_contact(params)
     redirect_to "/"
   end
 
   def favorite
-    contact = Contact.find(params[:contact_id])
-    contact.favorite ? contact.update(favorite: false) : contact.update(favorite: true)
-    contact.save
+    Contact.favorite_contact_toggle(params)
     redirect_to "/"
   end
 
   def show_favorites
-    @favorites = Contact.where(favorite: 't')
+    @favorites = Contact.get_favorites
   end
 end
