@@ -30,3 +30,5 @@ __Week 4__ (Ruby on Rails)
 
 - Monday: Intro to RoR: Address Book exercise 
 - Tuesday: Data persistence: URL shortener exercise
+- Wednesday: none
+- Thursday: Auction site exercise
