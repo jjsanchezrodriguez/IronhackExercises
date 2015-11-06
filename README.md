@@ -32,3 +32,4 @@ __Week 4__ (Ruby on Rails)
 - Tuesday: Data persistence: URL shortener exercise
 - Wednesday: none
 - Thursday: Auction site exercise
+- Friday: Music network exercise
