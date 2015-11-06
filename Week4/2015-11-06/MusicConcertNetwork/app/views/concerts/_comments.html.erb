@@ -1,0 +1,10 @@
+<% comments.any? %>
+<ul class="list-group">
+    <% comments.each do |comment| %>
+        <li class="list-group-item">
+            <p><strong>Posted on: </strong><%= comment.created_at %></p>
+            <p><%= comment.comment %></p>
+        </li>
+    <% end %>
+</ul>
+

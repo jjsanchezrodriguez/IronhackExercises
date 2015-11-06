@@ -1,0 +1,16 @@
+<h1><%= @concert.band %></h1>
+<div class="jumbotron">
+    <h3>Date: <%= @concert.date %></h3>
+    <h3>Location: <%= @concert.venue%>, <%= @concert.city %></h3>
+    <h3>Admission: <%= @concert.price %></h3>
+    <%= @concert.description %>
+</div>
+
+<p>
+<h3>Comments</h3>
+<%= render "comments", comments: @comments %>
+</p>
+
+<p>
+    <%= link_to "Back", concerts_path, class: "btn btn-default" %>
+</p>

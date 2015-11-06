@@ -1,0 +1,21 @@
+.flash-alert, .flash-error {
+    padding: 10px;
+    margin: 10px auto;
+    width: 30%;
+    font-size: 12px;
+}
+
+.flash-alert {
+    background-color: rgba(138,189,95,0.3);
+    border: 1px solid #C6EFA4; 
+    border-radius: 5px;
+    color: #333333;
+
+}
+
+.flash-error {
+    background-color: rgba(189, 95, 95, 0.3);
+    border: 1px solid #F76767; 
+    border-radius: 5px;
+    color: #333333;
+}

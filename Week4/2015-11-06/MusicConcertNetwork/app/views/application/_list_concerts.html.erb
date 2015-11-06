@@ -1,0 +1,15 @@
+<% concerts.any? %>
+<ul class="list-group">
+    <% concerts.each do |concert| %>
+        <li class="list-group-item">
+            <%= content_tag(:h4, link_to(concert.band, concert_path(concert.id)), class: "list-group-item-text") %>
+            <p><%= concert.date %></p>
+            <p><strong>Venue / City: </strong><%= concert.venue%>, <%= concert.city %></p>
+            <p><strong>Price: </strong><%= concert.price %> $</p>
+            <p class="list-group-item-text"><%= concert.description %></p>
+            <p><strong>Comments: </strong><%= concert.comments.count %></p>
+
+        </li>
+    <% end %>
+</ul>
+
