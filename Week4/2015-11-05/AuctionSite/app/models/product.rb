@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   belongs_to :user
   has_many :bids, dependent: :destroy
 
-  validates :title, :description, :deadline, presence: true
+  validates :title, :description, :deadline, :minimum_bid, presence: true
 
   def index
   end

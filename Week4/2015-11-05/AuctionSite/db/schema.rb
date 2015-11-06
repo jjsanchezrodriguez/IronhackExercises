@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105200831) do
+ActiveRecord::Schema.define(version: 20151106103004) do
 
   create_table "bids", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "amount"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.decimal  "amount",     precision: 3, scale: 2
   end
 
   add_index "bids", ["product_id"], name: "index_bids_on_product_id"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 20151105200831) do
     t.string   "description"
     t.datetime "deadline"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.decimal  "minimum_bid", precision: 3, scale: 2
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"

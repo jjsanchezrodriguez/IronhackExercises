@@ -13,3 +13,32 @@
     padding: 10px;
     margin: 30px auto;
 }
+
+.product-form {
+    display: flex;
+}
+
+.product-form-fields {
+    margin-left: 10px;
+}
+
+.product-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding-right: 13px;
+}
+
+.product-show-nav-links {
+    display: flex;
+}
+
+.product-show-nav-links a {
+    margin: 20px;
+    padding: 10px 40px;
+    font-weight: 400;
+    text-decoration: none;
+    background-color: #FFB360;
+    border-radius: 5px;
+    color: #000000;
+}

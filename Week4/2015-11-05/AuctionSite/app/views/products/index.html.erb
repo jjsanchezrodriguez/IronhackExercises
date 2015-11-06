@@ -1,12 +1,7 @@
 <h1>Products</h1>
 
+<%= flash_messages %>
+
 <%= link_to "New product", new_user_product_path(params[:user_id]), class: "add-button" %>
 
-<% @products.each do |product| %>
-    <div class="product-item">
-        <p><b>Product: </b><a href="<%= user_product_path(product.user_id, product.id)%>"><%= product.title %><a/></p>
-        <p><b>Description: </b><%= product.description %></p>
-        <p><b>Deadline: </b><%= product.deadline %></p>
-        <p><b>Bids: </b><%= product.bids.count %></p>
-    </div>
-<% end %>
+<%= render "products", products: @products %>
