@@ -12,13 +12,13 @@ Comment.destroy_all
 puts "-- destroyed data ---"
 
 10.times do |i|
-  concert = Concert.create(band: Faker::Company.name, venue: Faker::Lorem.word.capitalize + " Club", city: Faker::Address.city,                                                                                                                                      price: rand(2.20 .. 5.60), description: Faker::Lorem.sentences(5).join(' '),                                                                                                                                       date: Faker::Time.forward(rand(40..100), :evening))
-  2.times do |c|
+  concert = Concert.create(band: Faker::Company.name, venue: Faker::Lorem.word.capitalize + " Club", city: Concert.cities[rand(Concert.cities.count - 1)],                                                                                                                                      price: rand(2.20 .. 9.60), description: Faker::Lorem.sentences(5).join(' '),                                                                                                                                       date: Faker::Time.forward(rand(40..100), :evening))
+  rand(5).times do |c|
     Comment.create(concert_id: concert.id, comment: Faker::Lorem.sentences(3).join(' '))
   end
 end
 
-Concert.create(band: "New Order", venue: "CGB", city: "LA", price: 3.30, description: "Kicks ass", date: Date.today)
+Concert.create(band: "New Order", venue: "CGB", city: "Los Angeles", price: 3.30, description: "Kicks ass", date: Date.today)
 Concert.create(band: "Broken Social Scene", venue: "007", city: "Prague", price: 4.30, description: "Pretty good", date: Date.today + 2)
 
 puts "--- DB refreshed ---"

@@ -1,0 +1,11 @@
+<h1>Search</h1>
+
+<h3>Search by price</h3>
+
+<%= form_tag search_by_price_path do %>
+    <div class="form-group">
+        <%= label_tag "Your price maximum" %>
+        <%= number_field_tag "price",class: "form-control" %>
+    </div>
+    <%= submit_tag "Search", class: "form-control" %>
+<% end %>

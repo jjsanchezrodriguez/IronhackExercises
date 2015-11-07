@@ -1,5 +1,6 @@
 <h1><%= @concert.band %></h1>
 <div class="jumbotron">
+    <img class="img-responsive img-circle" src=<%= @concert.poster %> alt="">
     <h3>Date: <%= @concert.date %></h3>
     <h3>Location: <%= @concert.venue%>, <%= @concert.city %></h3>
     <h3>Admission: <%= @concert.price %></h3>

@@ -2,12 +2,19 @@
 <ul class="list-group">
     <% concerts.each do |concert| %>
         <li class="list-group-item">
-            <%= content_tag(:h4, link_to(concert.band, concert_path(concert.id)), class: "list-group-item-text") %>
-            <p><%= concert.date %></p>
-            <p><strong>Venue / City: </strong><%= concert.venue%>, <%= concert.city %></p>
-            <p><strong>Price: </strong><%= concert.price %> $</p>
-            <p class="list-group-item-text"><%= concert.description %></p>
-            <p><strong>Comments: </strong><%= concert.comments.count %></p>
+            <div class="concert-group-item">
+                <div class="concert-group-item-label">
+                    <%= content_tag(:h4, link_to(concert.band, concert_path(concert.id)), class: "list-group-item-text") %>
+                </div>
+                <div class="concert-group-item-avatar">
+                    <img src=<%= concert.poster %> alt="">
+                </div>
+            </div>
+                <p><%= concert.date %></p>
+                <p><strong>Venue / City: </strong><%= concert.venue%>, <%= concert.city %></p>
+                <p><strong>Price: </strong><%= concert.price %> $</p>
+                <p class="list-group-item-text"><%= concert.description %></p>
+                <p><strong>Comments: </strong><%= concert.comments.count %></p>
 
         </li>
     <% end %>

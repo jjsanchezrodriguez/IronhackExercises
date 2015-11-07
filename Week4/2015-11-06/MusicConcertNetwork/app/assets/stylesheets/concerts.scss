@@ -1,3 +1,18 @@
 // Place all the styles related to the Concerts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.concert-group-item-avatar img {
+    background-color: black;
+    width: 15%;
+}
+
+.concert-group-item-avatar {
+    text-align: right;
+}
+
+.concert-group-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}

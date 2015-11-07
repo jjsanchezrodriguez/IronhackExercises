@@ -9,7 +9,11 @@
     </div>
     <div class="form-group">
         <%= f.label "City" %>
-        <%= f.text_field :city, class: "form-control" %>
+        <%= f.select :city, class: "form-control" do %>
+            <% Concert.cities.each do |c| %>
+                <%= content_tag(:option, c, value: c) %>
+            <% end %>
+        <% end %>
     </div>
     <div class="form-group">
         <%= f.label "Date" %>
@@ -22,6 +26,10 @@
     <div class="form-group">
         <%= f.label "Info" %>
         <%= f.text_area :description, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label "Poster upload" %>
+        <%= f.file_field :poster %>
     </div>
     <div>
     <%= f.submit "Add", class: "form-control" %>
