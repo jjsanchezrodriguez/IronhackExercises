@@ -1,0 +1,14 @@
+<div class="list-group">
+    <h4 class="list-group-item-heading"><%= movie.title %></h4>
+    <p class="list-group-item-text">
+        <img src=<%= movie.poster %> class="movie-poster"></p>
+    <p class="list-group-item-text"><%= movie.year%></p>
+    <p class="list-group-item-text"><%= movie.plot %></p>
+    <h5 class="list-group-item-heading">Comments</h4>
+    <% if movie.comments.any? %>
+        <% movie.comments.each do |comment| %>
+            <p class="list-group-item-text"><%= comment.created_at %></p>
+            <p class="list-group-item-text"><%= comment.comment %></p>
+        <% end %>
+    <% end %>
+</div>

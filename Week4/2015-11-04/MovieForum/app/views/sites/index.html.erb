@@ -1,0 +1,31 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome to Movie Discussions</h1>
+    <p>
+        Use the search bar above to look for movies in this database or in IMDB.
+        Engage in the discussion on each movie's page.
+    </p>
+  </div>
+</div>
+
+<div class="container">
+    <% if Movie.all.any? %>
+        <!-- not perfect but needed quick randomized movies -->
+        <% [Movie.all[rand(Movie.count - 1)], Movie.all[rand(Movie.count -1)], Movie.all[rand(Movie.count - 1)]].each do |movie| %>
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+        <h2><a href=<%= movie_path(movie.id) %>><%= movie.title %></a></h2>
+        <img src=<%= movie.poster %> class="movie-poster-index">
+    </div>
+          <% end %>
+      <% end %>
+
+  <hr>
+
+
+  <footer>
+    <p>&copy; Company 2014</p>
+  </footer>
+</div>

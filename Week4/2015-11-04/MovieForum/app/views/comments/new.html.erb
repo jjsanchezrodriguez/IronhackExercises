@@ -1,0 +1,17 @@
+<h1>New comment</h1>
+
+<%= render "movies/list_single", movie: @movie %>
+
+<%= form_for @comment, url: movie_comments_path do |f| %>
+    <div class="form-group">
+        <%= label_tag "username" %>
+        <%= text_field_tag :user%>
+    </div>
+    <div class="form-group">
+        <%= f.label "comment" %>
+        <%= f.text_area :comment %>
+    </div>
+    <%= f.hidden_field :real_movie_id, :value => @movie.id %>
+        <%= f.submit "Post" %>
+    </div>
+<% end %>

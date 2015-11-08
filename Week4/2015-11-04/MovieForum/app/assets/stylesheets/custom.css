@@ -1,0 +1,14 @@
+body {
+}
+
+img.movie-poster {
+    width: 400px;
+}
+
+img.movie-poster-index {
+    width: 250px;
+}
+
+.list-group {
+    width: 650px;
+}

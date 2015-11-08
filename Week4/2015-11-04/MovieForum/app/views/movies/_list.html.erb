@@ -1,0 +1,26 @@
+<% if movies.any? %>
+    <% movies.each do |movie| %>
+        <div class ="list-group">
+            <a href=<%= movie_path(movie.id) %>>
+                <h4 class="list-group-item-heading">
+                <%= movie.title %>
+            </h4></a>
+            <div>
+                <img src=<%= movie.poster %> class="movie-poster">
+            </div>
+            <p class="list-group-item-text">
+                <%= movie.year %>
+            </p>
+            <p class="list-group-item-text">
+                <%= movie.plot %>
+            </p>
+            <% unless movie.respond_to?(:comments) && movie.comments.any? %>
+                <p>
+                    <%= link_to "Start a discussion", new_movie_comment_path(movie.id)  %>
+                </p>
+            <% end %>
+        </div>
+    <% end %>
+<% else %>
+    <%= content_tag(:div, "Sorry no results.") %>
+<% end %>
