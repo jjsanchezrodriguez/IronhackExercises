@@ -33,3 +33,7 @@ __Week 4__ (Ruby on Rails)
 - Wednesday: Auction site exercise
 - Thursday: Movie forum exercise
 - Friday: Music network exercise
+
+__Week 5__ (Advanced JavaScript)
+
+- Monday: jQuery and DOM manipulation: Pizza Builder exercise
