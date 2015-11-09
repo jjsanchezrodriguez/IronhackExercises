@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="./phrases.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style>a.delete-phrase{ margin-right: 30px; }</style>
+</head>
+<body>
+    <div class="container">
+      <div style="margin-top: 50px;"></div>
+
+        <div class="jumbotron">
+          <h1 class="phrase"></h1>
+          <button type="button" class="btn btn-primary btn-lg" id="phrase-button">
+            Get phrase!
+          </button>
+        </div>
+
+        <form>
+          <input type="text" class="form-control" placeholder="Enter a phrase" >
+        </form>
+
+        <p>
+          <br>
+          <a href="#" id="toggle-phrases">Show phrases</a>
+          <p class="phrases">
+          </p>
+        </p>
+
+    </div>
+
+</body>
+</html>
