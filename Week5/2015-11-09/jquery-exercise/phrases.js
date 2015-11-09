@@ -6,8 +6,11 @@ var phrases = {
 } 
 $(document).on('ready', function() {
 
+    // set initial values
     var phrasesParagraph = $('p.phrases');
+    togglePhrasesList();
     var hideShowLink = $('#toggle-phrases');
+
 
     function getRandomPhrase() {
         return phrases.list[Math.floor(Math.random() * phrases.list.length)];
@@ -18,7 +21,7 @@ $(document).on('ready', function() {
         phrases.list.forEach(function(ph) {
             phrasesParagraph.append("<p class='item'>" + "<a class='delete-phrase' href='#'>X</a>" + ph + "</p>" );
         });
-
+        phrasesParagraph.append("<p class='item' id='item-async'></p>");
     }
 
     function togglePhraseLink() {
@@ -64,6 +67,7 @@ $(document).on('ready', function() {
         var input = $('input');
         phrases.list.push(input.val());
         input.val('');
+        togglePhrasesList();
     });
 
     $('#toggle-phrases').on('click', function(event) {
@@ -75,10 +79,17 @@ $(document).on('ready', function() {
 
     });
 
+    // observe on body
     $('body').on( 'click', 'a.delete-phrase',function(event) {
         event.preventDefault();
         var text = $(this).parent().text().substring(1);
         deletePhrase(text);
         $(this).parent().remove();
     })
+
+    // observe on input
+    $('input').on('input', function() {
+        var asyncInput = $(this).val();
+        $('p#item-async').text(asyncInput);
+    });
 })
