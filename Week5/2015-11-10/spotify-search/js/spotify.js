@@ -120,7 +120,7 @@ $(document).ready(function() {
         query.term = $(event.target).attr('data');
         requestAlbumTracks();
 
-        $("div.album-tracks[id=" + query.term + "]").toggle() 
+        $("div.album-tracks[id=" + query.term + "]").slideToggle() 
     });
 
 });
