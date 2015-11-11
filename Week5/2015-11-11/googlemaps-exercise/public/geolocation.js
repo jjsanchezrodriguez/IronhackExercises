@@ -59,7 +59,7 @@ function createMarker(position){
         var lookUp = event.latLng.lat() + ',' + event.latLng.lng();
         var address = addressLookUp(lookUp);
         var aMarker = this;
-        createInfoWindow(address, aMarker);
+        createInfoWindow(address, aMarker)
     });
     markers.push(marker)
 }
@@ -86,7 +86,7 @@ function setupAutocomplete(){
     autocomplete.addListener('place_changed', function(){
         var place = autocomplete.getPlace();
         var coords = {
-            lat: place.geometry.location.lat(), 
+            lat: place.geometry.location.lat(),
             lng: place.geometry.location.lng()
         };
         if (place.geometry.location) {
@@ -94,7 +94,6 @@ function setupAutocomplete(){
           map.setZoom(17);
           createMarker(coords);
           window.localStorage.setItem(place.formatted_address, JSON.stringify(coords.lat) +',' +JSON.stringify(coords.lng));
-          //window.localStorage
         } else {
           alert("The place has no location...?")
         }
