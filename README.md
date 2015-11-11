@@ -38,3 +38,4 @@ __Week 5__ (Advanced JavaScript)
 
 - Monday: jQuery and DOM manipulation: Pizza Builder exercise + Phrase generator exercise
 - Tuesday: AJAX & jQuery: Spotify Searcher exercise
+- Wednesday: More JS: Geolocation search exercise
