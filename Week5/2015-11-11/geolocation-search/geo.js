@@ -3,7 +3,7 @@
 var geo;
 var watchId;
 var map = {
-    apiKey : "&key=AIzaSyBmhV2TynprYY-Dz9lI2V2UXcI5nl7IUnA",
+    apiKey : "ADDKEYHERE",
     baseURL : "https://maps.googleapis.com/maps/api/staticmap?&zoom=17",
     latitude: null,
     longitude: null,
