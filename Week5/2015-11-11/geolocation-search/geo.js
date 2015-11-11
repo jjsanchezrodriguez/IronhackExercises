@@ -2,6 +2,26 @@
 
 var geo;
 var watchId;
+var map = {
+    apiKey : "&key=AIzaSyBmhV2TynprYY-Dz9lI2V2UXcI5nl7IUnA",
+    baseURL : "https://maps.googleapis.com/maps/api/staticmap?&zoom=17",
+    latitude: null,
+    longitude: null,
+    center: null,
+    markers: null,
+    size: "&size=800x600",
+    genCenter: function() {
+        this.center = "&center=" + this.latitude + ',' + this.longitude;
+    },
+    genMarkers: function() {
+        this.markers = "&markers=color:blue%7Clabel:S%7C" + this.latitude + ',' + this.longitude
+    },
+    URL: function() {
+        this.genCenter();
+        this.genMarkers();
+        return this.baseURL + this.size + this.center + this.markers + this.apiKey;
+    }
+}
 
 $('div.load').hide();
 
@@ -27,10 +47,16 @@ function requestWatchPosition() {
 
 
 function onLocation(position) {
-    var c = position.coords;
+    map.center = null;
+    map.latitude = position.coords.latitude;
+    map.longitude = position.coords.longitude;
     $('div.load').empty();
     $('div.location').empty();
-    $('div.location').append("<p>Latitude: " + c.latitude + "</p><p>Longitude: " + c.longitude + "</p>");
+    var posLabel = $('<p>').text("Latitude: " + map.latitude + " Longitude: " + map.longitude);
+    $('div.location').append(posLabel);
+    var img = $('<img>');
+    img.attr('src', map.URL() );
+    $('div.location').append(img);
 }
 
 function onError() {
