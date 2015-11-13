@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="player.js"></script>
+  <title>Video Timers</title>
+  <style>
+    #time {
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      background-color: white;
+      padding: 5px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div style="margin: 10px 0px;">
+    <form>
+      <input type="text" placeholder="video link ...">
+      <input type="submit" value="Add video">
+      <button id="reset-time">Reset</button>
+      <div id="time">Total time: <span id="total-time"></span></div>
+    </form>
+  </div>
+  <div id="vidbox">
+  </div>
+</body>
+</html>
