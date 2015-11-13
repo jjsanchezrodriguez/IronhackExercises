@@ -40,3 +40,4 @@ __Week 5__ (Advanced JavaScript)
 - Tuesday: AJAX & jQuery: Spotify Searcher exercise
 - Wednesday: Google Maps API & Geolocation: Google Maps Static exercise & Google Maps Javascript API exercise 
 - Thursday: More AJAX calls: Pokedex Exercise & Audio-Video Player exercise
+- Friday: Spotify Player Exercise

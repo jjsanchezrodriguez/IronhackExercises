@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title></title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="spotify-player.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="search">
+      <div class="search-form">
+        <form>
+          <input type="text" placeholder="Search Spotify...">
+          <input type="submit" value="Search">
+        </form>
+      </div>
+    </div>
+
+    <div class="widget">
+      <div class="header">
+      <!-- Try adding/removing these classes: -->
+      <!-- disabled -->
+      <!-- playing -->
+      <div class="btn-play disabled"></div>
+
+      <div class="metadata">
+        <p class="title">Hunger of The Pine</p>
+        <p class="author"><a href="#" class="artist-info">alt-J</a></p>
+
+        <div class="seekbar">
+          <progress value="5" max="30"></progress>
+        </div>
+      </div>
+      </div>
+      <div class="cover">
+        <a class="artist-info" href="#">
+          <img src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
+        </a>
+      </div>
+
+      <audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
+    </div>
+
+
+    <!-- BOOTSTRAP MODAL -->
+    <div class="modal fade js-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <!-- Close button -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span>&times;</span>
+            </button>
+
+            <h2></h2>
+            <img src="#"></img>
+          </div>
+
+          <div class="modal-body">
+            <dl>
+            </dl>
+          </div>
+
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+  </div>
+
+</body>
+</html>
