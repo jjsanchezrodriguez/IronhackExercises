@@ -41,3 +41,7 @@ __Week 5__ (Advanced JavaScript)
 - Wednesday: Google Maps API & Geolocation: Google Maps Static exercise & Google Maps Javascript API exercise 
 - Thursday: More AJAX calls: Pokedex Exercise & Audio-Video Player exercise
 - Friday: Spotify Player Exercise
+
+__Week 6__ (Advanced Ruby on Rails)
+
+- Monday: Creating RoR REST API, RSPec API: Video Game exercise
