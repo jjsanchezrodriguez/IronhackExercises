@@ -45,3 +45,4 @@ __Week 5__ (Advanced JavaScript)
 __Week 6__ (Advanced Ruby on Rails)
 
 - Monday: Creating RoR REST API, RSPec API: Video Game exercise
+- Tuesday: Testing APIs with rspec-rails: StarCraft Match API exercise
