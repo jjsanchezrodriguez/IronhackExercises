@@ -1,0 +1,7 @@
+<h1>Add product</h1>
+
+ <%= render "form", user: @user, product: @product %>
+
+<div class="product-show-nav-links">
+    <%= link_to "Back to products", user_products_path(@user) %> 
+</div>

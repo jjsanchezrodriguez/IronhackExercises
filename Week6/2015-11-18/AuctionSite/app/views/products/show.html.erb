@@ -1,0 +1,48 @@
+<h1><%= @product.title %></h1>
+
+<div class="product-item">
+    <p><b>Description</b></p>
+    <p><%= @product.description %></p>
+
+    <% if @reviews.any? %>
+        <p><b>Reviews</b></p>
+        <ul>
+            <% @reviews.each do |review| %>
+                <li>
+                    <p>
+                        <b>Reviewer: </b><%= User.find_by(id: review.user_id).name %>
+                    </p>                
+                    <p>
+                        <%= review.description %>
+                    </p>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <% if user_signed_in? %>
+    <p><b>Add Review</b>
+        <%= form_for @review, url: user_product_review_path do |f| %>
+            <%= label_tag "Review:" %>
+            <%= f.text_field :description %>
+            <%= f.submit "Add review" %>
+        <% end %>
+    </p>
+    <% end %>
+
+    <p><b>Current bid</b></p>
+    <p><%= @product.minimum_bid %> $</p>
+    <p><b>Deadline</b></p>
+
+    <%= render "new_bid_form", user: @user, product: @product, bid: @bid %>
+
+    <%= render "bids", product: @product %>
+
+
+
+</div>
+
+<div class="product-show-nav-links">
+    <%= link_to "Back to products", user_products_path(@product.user_id) %> 
+    <%= link_to "Back to product index", products_path %> 
+</div>

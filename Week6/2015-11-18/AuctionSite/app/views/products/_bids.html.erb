@@ -1,0 +1,18 @@
+<% if product.bids.any? %>
+    <p><b>Bids</b></p>
+    <ul>
+        <% product.bids.each do |bid| %>
+            <li>
+                <p><b>Username</b>
+                    <%= bid.user.name %>
+                </p>
+                <p><b>Amount</b>
+                    <%= bid.amount %>$ 
+                </p>
+                <p><b>Time</b>
+                    <%= bid.created_at %>
+                </p>
+            </li>
+        <% end %>
+    </ul>
+<% end %>

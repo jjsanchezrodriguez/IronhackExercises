@@ -1,0 +1,7 @@
+<h1>Products</h1>
+
+<%= flash_messages %>
+
+<%= link_to "New product", new_user_product_path(params[:user_id]), class: "add-button" %>
+
+<%= render "products", products: @products %>

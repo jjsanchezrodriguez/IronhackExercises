@@ -1,0 +1,45 @@
+<%= button_name = product.persisted? ? "Edit product" : "Create a product" %>
+
+<%= form_for [user, product] do |f| %>
+
+    <div class="product-form">
+
+        <div class="product-form-labels">
+            <div>
+                <%= f.label :title %>
+            </div>
+            <div>
+                <%= f.label :description %>
+            </div>
+            <div>
+                <%= f.label :minimum_bid %>
+            </div>
+            <div>
+                <%= f.label :deadline %>
+            </div>
+        </div>
+
+        <div class="product-form-fields">
+            <div>
+            <%= f.text_field :title %>
+            </div>
+            <div>
+            <%= f.text_field :description %>
+            </div>
+            <div>
+            <%= f.number_field :minimum_bid, :step => 0.01 %>
+            </div>
+            <div>
+            <%= f.datetime_select :deadline %>
+            </div>
+
+            <div class="product-form-buttons">
+                <div>
+                <%= f.submit "Create" %>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+<% end %>

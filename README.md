@@ -46,3 +46,4 @@ __Week 6__ (Advanced Ruby on Rails)
 
 - Monday: Creating RoR REST API, RSPec API: Video Game exercise
 - Tuesday: Testing APIs with rspec-rails: StarCraft Match API exercise
+- Wednesday: Authentication & Authorization (Devise, bcrypt): Auction Site with Devise exercise

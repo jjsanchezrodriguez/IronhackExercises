@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
+body {
+    background-color: #F1B97D;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 0px;
+}
+
+.flash-alert, .flash-error {
+    padding: 10px;
+    margin: 10px auto;
+    width: 30%;
+    font-size: 12px;
+}
+
+.flash-alert {
+    background-color: rgba(138,189,95,0.3);
+    border: 1px solid #C6EFA4; 
+    border-radius: 5px;
+    color: #C6EFA4;
+
+}
+
+.flash-error {
+    background-color: rgba(189, 95, 95, 0.3);
+    border: 1px solid #F76767; 
+    border-radius: 5px;
+    color: #F76767;
+}
+
+.main {
+    width: 800px;
+    margin: 0px auto;
+    padding: 0px 10px;
+}
+
+.add-button {
+    background-color: #00C7D9;
+    color: #092b41;
+    text-decoration: none;
+    border-bottom: 1px solid #092b41;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px 25px;
+    margin: 10px;
+    border-radius: 7px;
+}

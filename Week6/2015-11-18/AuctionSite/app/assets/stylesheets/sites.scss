@@ -1,0 +1,60 @@
+// Place all the styles related to the sites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+main {
+    padding: 0px 10px;
+}
+
+nav {
+    background-color: #000000;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
+
+    ul.buttons {
+        display: flex;
+
+        li {
+            padding: 3px 20px;
+            list-style-type: none;
+            a {
+                text-decoration: none;
+                color: white;
+
+                &:visited {
+                    color: #eee;
+                }
+
+                &:hover {
+                    color: #000000;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+div.links {
+    font-size: 18px;
+}
+
+div.logo a {
+    font-size: 34px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+
+}

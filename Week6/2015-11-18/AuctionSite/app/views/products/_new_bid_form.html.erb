@@ -1,0 +1,31 @@
+    <% if DateTime.now < product.deadline %>
+
+        <p><%= product.deadline %></p>
+
+        <p><b>New bid</b></p>
+            <%= form_for [user, product, bid] do |f| %>
+            <div class="product-form">
+                <div class="product-form-labels">
+                    <div>
+                    <%= f.label "Bidder email" %>
+                    </div>
+                    <div>
+                    <%= f.label :amount %>
+                    </div>
+                </div>
+                <div class="product-form-fields">
+                    <div>
+                    <%= email_field_tag :email %>
+                    </div>
+                    <div>
+                    <%= f.number_field :amount, :step => 0.01 %> $
+                    </div>
+                    <div class="product-form-buttons">
+                        <%= f.submit "Bid" %>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        <% else %>
+            <p><%= "Auction ended." %></p>
+        <% end %>
