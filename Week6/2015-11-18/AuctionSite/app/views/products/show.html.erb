@@ -10,8 +10,8 @@
             <% @reviews.each do |review| %>
                 <li>
                     <p>
-                        <b>Reviewer: </b><%= User.find_by(id: review.user_id).name %>
-                    </p>                
+                        <b>Reviewer: </b><%= review.user.name %>
+                    </p>
                     <p>
                         <%= review.description %>
                     </p>
@@ -43,6 +43,6 @@
 </div>
 
 <div class="product-show-nav-links">
-    <%= link_to "Back to products", user_products_path(@product.user_id) %> 
-    <%= link_to "Back to product index", products_path %> 
+    <%= link_to "Back to products", user_products_path(@product.user_id) %>
+    <%= link_to "Back to product index", products_path %>
 </div>
